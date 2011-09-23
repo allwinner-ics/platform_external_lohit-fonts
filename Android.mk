@@ -12,9 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# We have to use PRODUCT_PACKAGES (together with BUILD_PREBUILT) instead of
-# PRODUCT_COPY_FILES to install the font files, so that the NOTICE file can
-# get installed too.
+# We have to use BUILD_PREBUILT instead of PRODUCT_COPY_FIES,
+# to copy over the NOTICE file.
 
-PRODUCT_PACKAGES := \
-    Lohit-Devanagari.ttf
+LOCAL_PATH := $(call my-dir)
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := Lohit-Devanagari.ttf
+LOCAL_SRC_FILES := lohit-devanagari-ttf/$(LOCAL_MODULE)
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+
+include $(BUILD_PREBUILT)
