@@ -16,12 +16,27 @@
 # to copy over the NOTICE file.
 
 LOCAL_PATH := $(call my-dir)
-include $(CLEAR_VARS)
 
+include $(CLEAR_VARS)
 LOCAL_MODULE := Lohit-Devanagari.ttf
 LOCAL_SRC_FILES := lohit-devanagari-ttf/$(LOCAL_MODULE)
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+include $(BUILD_PREBUILT)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE := Lohit-Bengali.ttf
+LOCAL_SRC_FILES := lohit-bengali-ttf/$(LOCAL_MODULE)
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Lohit-Tamil.ttf
+LOCAL_SRC_FILES := lohit-tamil-ttf/$(LOCAL_MODULE)
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
 include $(BUILD_PREBUILT)

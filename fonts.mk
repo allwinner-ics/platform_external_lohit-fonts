@@ -16,5 +16,15 @@
 # PRODUCT_COPY_FILES to install the font files, so that the NOTICE file can
 # get installed too.
 
+
+ifeq ($(SMALLER_FONT_FOOTPRINT),true)
+# Smaller fonts alternatives
 PRODUCT_PACKAGES := \
     Lohit-Devanagari.ttf
+else
+## Full font set alternatives
+#PRODUCT_PACKAGES := \
+#    Lohit-Devanagari.ttf \
+#    Lohit-Bengali.ttf \
+#    Lohit-Tamil.ttf
+endif
