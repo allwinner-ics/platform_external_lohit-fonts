@@ -17,12 +17,19 @@
 
 LOCAL_PATH := $(call my-dir)
 
+extra_lohit_fonts :=
+ifneq ($(SMALLER_FONT_FOOTPRINT),true)
+extra_lohit_fonts := Lohit-Bengali.ttf Lohit-Tamil.ttf
+endif
+
 include $(CLEAR_VARS)
 LOCAL_MODULE := Lohit-Devanagari.ttf
 LOCAL_SRC_FILES := lohit-devanagari-ttf/$(LOCAL_MODULE)
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_PATH := $(TARGET_OUT)/fonts
+LOCAL_REQUIRED_MODULES := $(extra_lohit_fonts)
+extra_lohit_fonts :=
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
